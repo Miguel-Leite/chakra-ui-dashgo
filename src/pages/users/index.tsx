@@ -5,6 +5,7 @@ import { Header } from "@/src/components/Header";
 import { Sidebar } from "@/src/components/Sidebar";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Pagination } from "@/src/components/Pagination";
+import Link from "next/link";
 
 
 export default function UserList() {
@@ -25,11 +26,12 @@ export default function UserList() {
             <Heading size="lg" fontWeight="normal">Usuários</Heading>
 
             <Button
-              as="a"
+              as={Link}
               size="sm"
               fontSize="sm"
               colorScheme="purple"
               leftIcon={<Icon as={RiAddLine} fontSize="20" />}
+              href="/users/create"
             >
               Criar novo
             </Button>
