@@ -1,5 +1,5 @@
 
-import { Box, Button, Checkbox, Flex, Heading, Icon, Table, Tbody, Td, Text, Th, Thead, Tr } from "@chakra-ui/react";
+import { Box, Button, Checkbox, Flex, Heading, Icon, Table, Tbody, Td, Text, Th, Thead, Tr, useBreakpointValue } from "@chakra-ui/react";
 
 import { Header } from "@/src/components/Header";
 import { Sidebar } from "@/src/components/Sidebar";
@@ -8,6 +8,11 @@ import { Pagination } from "@/src/components/Pagination";
 
 
 export default function UserList() {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <Box>
       <Header />
@@ -29,21 +34,21 @@ export default function UserList() {
               Criar novo
             </Button>
           </Flex>
-
-          <Table colorScheme="whiteAlpha">
+          
+          <Table colorScheme="whiteAlpha" size={["xs","sm", "md"]}>
             <Thead>
               <Tr>
-                <Th px="6" color="gray.300" width="8">
+                <Th px={["4","4","6"]} color="gray.300" width="8">
                   <Checkbox colorScheme="purple" />
                 </Th>
                 <Th> Usuário </Th>
-                <Th> Data de cadastro </Th>
+                { isWideVersion && <Th> Data de cadastro </Th>}
                 <Th width="8"></Th>
               </Tr>
             </Thead>
             <Tbody>
               <Tr>
-                <Td px="6">
+                <Td px={["4","4","6"]} >
                   <Checkbox colorScheme="purple" />
                 </Td>
                 <Td>
@@ -52,7 +57,7 @@ export default function UserList() {
                     <Text fontSize="sm" color="gray.300">miguelleite200leite@gmail.com</Text>
                   </Box>
                 </Td>
-                <Td>01 de Fevereiro, 2023</Td>
+                { isWideVersion && <Td>01 de Fevereiro, 2023</Td>}
                 <Td>
                   <Button
                     as="a"
@@ -61,12 +66,12 @@ export default function UserList() {
                     colorScheme="blue"
                     leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
                   >
-                    Editar
+                    {isWideVersion && 'Editar'}
                   </Button>
                 </Td>
               </Tr>
               <Tr>
-                <Td px="6">
+                <Td px={["4","4","6"]} >
                   <Checkbox colorScheme="purple" />
                 </Td>
                 <Td>
@@ -75,7 +80,7 @@ export default function UserList() {
                     <Text fontSize="sm" color="gray.300">miguelleite200leite@gmail.com</Text>
                   </Box>
                 </Td>
-                <Td>01 de Fevereiro, 2023</Td>
+                { isWideVersion && <Td>01 de Fevereiro, 2023</Td>}
                 <Td>
                   <Button
                     as="a"
@@ -84,12 +89,12 @@ export default function UserList() {
                     colorScheme="blue"
                     leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
                   >
-                    Editar
+                    {isWideVersion && 'Editar'}
                   </Button>
                 </Td>
               </Tr>
               <Tr>
-                <Td px="6">
+                <Td px={["4","4","6"]} >
                   <Checkbox colorScheme="purple" />
                 </Td>
                 <Td>
@@ -98,7 +103,7 @@ export default function UserList() {
                     <Text fontSize="sm" color="gray.300">miguelleite200leite@gmail.com</Text>
                   </Box>
                 </Td>
-                <Td>01 de Fevereiro, 2023</Td>
+                { isWideVersion && <Td>01 de Fevereiro, 2023</Td>}
                 <Td>
                   <Button
                     as="a"
@@ -107,7 +112,7 @@ export default function UserList() {
                     colorScheme="blue"
                     leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
                   >
-                    Editar
+                    {isWideVersion && 'Editar'}
                   </Button>
                 </Td>
               </Tr>
