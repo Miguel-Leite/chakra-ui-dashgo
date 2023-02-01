@@ -7,7 +7,7 @@ import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Pagination } from "@/src/components/Pagination";
 
 
-export default function Users() {
+export default function UserList() {
   return (
     <Box>
       <Header />
